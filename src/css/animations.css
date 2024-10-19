@@ -16,3 +16,11 @@
     transform: translateX(-50%) translateY(100%) scale(1);
   }
 }
+@keyframes move {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}

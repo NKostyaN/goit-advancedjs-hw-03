@@ -1,6 +1,6 @@
-import getPhotos from './pixabay-api';
-import createGalleryItemMarkup from './render-functions';
-import { showNotFound, showError } from './render-functions';
+import getPhotos from './js/pixabay-api';
+import createGalleryItemMarkup from './js/render-functions';
+import { showNotFound, showError } from './js/render-functions';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 

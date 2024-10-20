@@ -1,6 +1,6 @@
 import getPhotos from './js/pixabay-api';
 import createGalleryItemMarkup from './js/render-functions';
-import { showNotFound, showError } from './js/render-functions';
+import { showNotFound, showError, showEmptyQuery } from './js/render-functions';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
@@ -19,7 +19,12 @@ let galleryLightbox = new SimpleLightbox('.gallery a', {
 function btnOnSubmit(event) {
   event.preventDefault();
 
-  const userQuery = event.target[0].value;
+  const userQuery = event.target[0].value.trim();
+  if (userQuery === '') {
+    showEmptyQuery();
+    return;
+  }
+
   loaderEl.hidden = false;
   galleryEl.innerHTML = '';
 
